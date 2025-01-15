@@ -1,38 +1,9 @@
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Layout, Menu, MenuProps } from 'antd';
-import { Children, createElement } from 'react';
 import { Outlet } from 'react-router-dom';
+import { adminSidebar } from '../../routes/admin.routes';
 const { Header, Content, Footer, Sider } = Layout;
 
-const items: MenuProps["items"] = [
-    {
-        key: '1',
-        label: 'Dashboard',
-    },
-    {
-        key: '2',
-        label: 'Profile',
-    },
-    {
-        key: '3',
-        label: 'User Management',
-        children: [
-            {
-                key: '345',
-                label: 'Create Admin',
-            },
-            {
-                key: '644',
-                label: 'Create Student',
-            },
-            {
-                key: '757',
-                label: 'Create Faculty',
-            },
-        ]
-    },
-
-];
+const items: MenuProps["items"] = adminSidebar;
 
 export const MainLayout = () => {
     return (
@@ -72,7 +43,7 @@ export const MainLayout = () => {
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
-                    Ant Design ©{new Date().getFullYear()} Created by Ant UED
+                    PH University ©{new Date().getFullYear()} Created by Hossain
                 </Footer>
             </Layout>
         </Layout>
